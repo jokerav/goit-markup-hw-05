@@ -62,6 +62,7 @@ img {
   --exemples-item-border: #eeeeee;
   --social-items-our-client: #afb1b8;
   --dooing-overlay: rgba(47, 48, 58, 0.8);
+  --timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 * {
   box-sizing: border-box;
@@ -147,7 +148,7 @@ h5 {
   text-decoration: none;
   transition-property: color;
   transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-timing-function: var(--timing-function);
 }
 
 .menu-link:hover,
@@ -172,16 +173,13 @@ h5 {
 .contacts-item {
   display: flex;
   align-items: center;
-  /* transition-property: color;
-  transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); */
 }
 .contact-icon {
   fill: var(--primary-text-color);
   margin-right: 10px;
   transition-property: fill;
   transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-timing-function: var(--timing-function);
 }
 .contacts-item:hover .contact-icon,
 .contacts-item:focus .contact-icon,
@@ -202,7 +200,7 @@ h5 {
   text-decoration: none;
   transition-property: color;
   transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-timing-function: var(--timing-function);
 }
 /* Секция герой */
 .hero {
@@ -253,7 +251,7 @@ h5 {
   border: none;
   transition-property: background-color, box-shadow;
   transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-timing-function: var(--timing-function);
 }
 .hero-btn:focus,
 .hero-btn:hover {
@@ -285,8 +283,7 @@ h5 {
   margin-bottom: 30px;
   border-radius: 4px;
 }
-.feacher-icon {
-}
+
 .feachers-title {
   font-size: 14px;
   line-height: 1.14;
@@ -402,10 +399,16 @@ h5 {
   justify-content: center;
   align-items: center;
   border-radius: 50%;
+  transition-property: background-color;
+  transition-duration: 250ms;
+  transition-timing-function: var(--timing-function);
 }
 
 .social-icon {
   fill: var(--social-items-our-client);
+  transition-property: fill, background-color;
+  transition-duration: 250ms;
+  transition-timing-function: var(--timing-function);
 }
 .social-link:hover .social-icon,
 .social-link:focus .social-icon {
@@ -432,9 +435,7 @@ h5 {
 .footer-logo-adress {
   margin-right: 70px;
 }
-/* .footer-social {
-  width: 206px;
-} */
+
 .footer-logo {
   display: inline-block;
   margin-bottom: 20px;
@@ -453,6 +454,9 @@ h5 {
   font-style: normal;
   letter-spacing: 0.03em;
   text-decoration: none;
+  transition-property: color;
+  transition-duration: 250ms;
+  transition-timing-function: var(--timing-function);
 }
 
 .join {
@@ -477,6 +481,9 @@ h5 {
   justify-content: center;
   align-items: center;
   border-radius: 50%;
+  transition-property: background-color;
+  transition-duration: 250ms;
+  transition-timing-function: var(--timing-function);
 }
 
 .footer-social-icon {
@@ -506,12 +513,18 @@ h5 {
   background-color: var(--background-primary);
   border: 1px solid var(--social-items-our-client);
   border-radius: 4px;
+  transition-property: border;
+  transition-duration: 250ms;
+  transition-timing-function: var(--timing-function);
 }
 .client-item:last-child {
   margin-right: 0;
 }
 .client-icon {
   fill: var(--social-items-our-client);
+  transition-property: fill;
+  transition-duration: 250ms;
+  transition-timing-function: var(--timing-function);
 }
 
 .client-link:hover .client-icon,
@@ -541,6 +554,9 @@ h5 {
   border-radius: 4px;
   border: none;
   padding: 6px 22px;
+  transition-property: background-color, color, box-shadow;
+  transition-duration: 250ms;
+  transition-timing-function: var(--timing-function);
 }
 .portfolio-btn-active {
   background-color: var(--accent);
@@ -573,20 +589,21 @@ h5 {
 .exemples-item-position:nth-child(3n) {
   margin-right: 0;
 }
-.exemple-link:hover,
-.exemple-link:focus {
-  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
-    1px 4px 6px rgba(0, 0, 0, 0.16);
-}
-
 .exemple-link {
   display: flex;
   flex-direction: column;
   width: 100%;
   height: 100%;
   text-decoration: none;
+  transition-property: box-shadow;
+  transition-duration: 250ms;
+  transition-timing-function: var(--timing-function);
 }
-
+.exemple-link:hover,
+.exemple-link:focus {
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
+    1px 4px 6px rgba(0, 0, 0, 0.16);
+}
 .exemples-text-container {
   padding: 20px 24px;
   border-bottom: 1px solid var(--exemples-item-border);
