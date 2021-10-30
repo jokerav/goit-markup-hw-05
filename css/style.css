@@ -62,6 +62,7 @@ img {
   --exemples-item-border: #eeeeee;
   --social-items-our-client: #afb1b8;
   --dooing-overlay: rgba(47, 48, 58, 0.8);
+  --exemples-overlay: rgba(33, 150, 243, 0.9);
   --timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 * {
@@ -610,6 +611,34 @@ h5 {
   transition-property: box-shadow;
   transition-duration: 250ms;
   transition-timing-function: var(--timing-function);
+}
+.exemple-overlay-box {
+  position: relative;
+  overflow: hidden;
+}
+.exemple-overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  transform: translateY(100%);
+  transition: transform 250ms var(--timing-function);
+  background-color: var(--exemples-overlay);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-left: 24px;
+  padding-right: 24px;
+}
+.exemple-overlay .text {
+  color: var(--background-primary);
+  font-size: 18px;
+  line-height: 1.55;
+  letter-spacing: 0.03em;
+}
+.exemple-overlay-box:hover .exemple-overlay {
+  transform: translateY(0);
 }
 .exemple-link:hover,
 .exemple-link:focus {
