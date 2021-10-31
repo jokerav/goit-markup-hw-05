@@ -63,6 +63,7 @@ img {
   --social-items-our-client: #afb1b8;
   --dooing-overlay: rgba(47, 48, 58, 0.8);
   --exemples-overlay: rgba(33, 150, 243, 0.9);
+  --transition-duration: 250ms;
   --timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 * {
@@ -148,7 +149,7 @@ h5 {
   letter-spacing: 0.02em;
   text-decoration: none;
   transition-property: color;
-  transition-duration: 250ms;
+  transition-duration: var(--transition-duration);
   transition-timing-function: var(--timing-function);
   position: relative;
 }
@@ -157,7 +158,7 @@ h5 {
   display: inline-block;
   position: absolute;
   left: 0;
-  bottom: 0;
+  bottom: -1px;
   width: 100%;
   height: 4px;
   background-color: var(--accent);
@@ -191,7 +192,7 @@ h5 {
   fill: var(--primary-text-color);
   margin-right: 10px;
   transition-property: fill;
-  transition-duration: 250ms;
+  transition-duration: var(--transition-duration);
   transition-timing-function: var(--timing-function);
 }
 .contacts-item:hover .contact-icon,
@@ -212,7 +213,7 @@ h5 {
   letter-spacing: 0.02em;
   text-decoration: none;
   transition-property: color;
-  transition-duration: 250ms;
+  transition-duration: var(--transition-duration);
   transition-timing-function: var(--timing-function);
 }
 /* Секция герой */
@@ -263,7 +264,7 @@ h5 {
   box-shadow: none;
   border: none;
   transition-property: background-color, box-shadow;
-  transition-duration: 250ms;
+  transition-duration: var(--transition-duration);
   transition-timing-function: var(--timing-function);
 }
 .hero-btn:focus,
@@ -406,31 +407,33 @@ h5 {
 }
 .social-link {
   background-color: var(--background-primary);
+  color: var(--social-items-our-client);
   width: 100%;
   height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   border-radius: 50%;
-  transition-property: background-color;
-  transition-duration: 250ms;
+  transition-property: background-color, color;
+  transition-duration: var(--transition-duration);
   transition-timing-function: var(--timing-function);
 }
 
 .social-icon {
-  fill: var(--social-items-our-client);
+  fill: currentColor;
   transition-property: fill, background-color;
-  transition-duration: 250ms;
+  transition-duration: var(--transition-duration);
   transition-timing-function: var(--timing-function);
 }
-.social-link:hover .social-icon,
+/* .social-link:hover .social-icon,
 .social-link:focus .social-icon {
   fill: var(--background-primary);
   background-color: var(--accent);
-}
+} */
 .social-link:hover,
 .social-link:focus {
   background-color: var(--accent);
+  color: var(--background-primary);
 }
 /* Класс social item общий в карточках команда и футере */
 
@@ -468,7 +471,7 @@ h5 {
   letter-spacing: 0.03em;
   text-decoration: none;
   transition-property: color;
-  transition-duration: 250ms;
+  transition-duration: var(--transition-duration);
   transition-timing-function: var(--timing-function);
 }
 
@@ -495,7 +498,7 @@ h5 {
   align-items: center;
   border-radius: 50%;
   transition-property: background-color;
-  transition-duration: 250ms;
+  transition-duration: var(--transition-duration);
   transition-timing-function: var(--timing-function);
 }
 
@@ -523,30 +526,32 @@ h5 {
   justify-content: center;
   align-items: center;
   width: 100%;
+  color: var(--social-items-our-client);
   background-color: var(--background-primary);
   border: 1px solid var(--social-items-our-client);
   border-radius: 4px;
-  transition-property: border;
-  transition-duration: 250ms;
+  transition-property: border, color;
+  transition-duration: var(--transition-duration);
   transition-timing-function: var(--timing-function);
 }
 .client-item:last-child {
   margin-right: 0;
 }
 .client-icon {
-  fill: var(--social-items-our-client);
+  fill: currentColor;
   transition-property: fill;
-  transition-duration: 250ms;
+  transition-duration: var(--transition-duration);
   transition-timing-function: var(--timing-function);
 }
 
-.client-link:hover .client-icon,
+/* .client-link:hover .client-icon,
 .client-link:focus .client-icon {
   fill: var(--accent);
-}
+} */
 .client-link:hover,
 .client-link:focus {
   border: 1px solid var(--accent);
+  color: var(--accent);
 }
 
 /* кнопки-фильтры в портфолио */
@@ -568,7 +573,7 @@ h5 {
   border: none;
   padding: 6px 22px;
   transition-property: background-color, color, box-shadow;
-  transition-duration: 250ms;
+  transition-duration: var(--transition-duration);
   transition-timing-function: var(--timing-function);
 }
 .portfolio-btn-active {
@@ -609,7 +614,7 @@ h5 {
   height: 100%;
   text-decoration: none;
   transition-property: box-shadow;
-  transition-duration: 250ms;
+  transition-duration: var(--transition-duration);
   transition-timing-function: var(--timing-function);
 }
 .exemple-overlay-box {
@@ -622,8 +627,8 @@ h5 {
   height: 100%;
   top: 0;
   left: 0;
-  transform: translateY(100%);
-  transition: transform 250ms var(--timing-function);
+  transform: translateY(101%);
+  transition: transform var(--transition-duration) var(--timing-function);
   background-color: var(--exemples-overlay);
   display: flex;
   justify-content: center;
@@ -637,7 +642,8 @@ h5 {
   line-height: 1.55;
   letter-spacing: 0.03em;
 }
-.exemple-overlay-box:hover .exemple-overlay {
+.exemple-overlay-box:hover .exemple-overlay,
+.exemple-overlay-box:focus .exemple-overlay {
   transform: translateY(0);
 }
 .exemple-link:hover,
@@ -685,7 +691,9 @@ h5 {
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
-  transition: transform 250ms var(--timing-function), opacity 250ms var(--timing-function);
+  transition: transform var(--transition-duration) var(--timing-function),
+    opacity var(--transition-duration) var(--timing-function),
+    visibility var(--transition-duration) var(--timing-function);
 }
 .modal-btn {
   position: absolute;
