@@ -421,9 +421,6 @@ h5 {
 
 .social-icon {
   fill: currentColor;
-  transition-property: fill, background-color;
-  transition-duration: var(--transition-duration);
-  transition-timing-function: var(--timing-function);
 }
 /* .social-link:hover .social-icon,
 .social-link:focus .social-icon {
@@ -681,6 +678,10 @@ h5 {
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.2);
   top: 0;
+  transition:
+   /* transform var(--transition-duration) var(--timing-function), */ opacity
+      var(--transition-duration) var(--timing-function),
+    visibility var(--transition-duration) var(--timing-function);
 }
 .modal {
   position: absolute;
@@ -693,9 +694,9 @@ h5 {
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
-  transition: transform var(--transition-duration) var(--timing-function),
+  /* transition: transform var(--transition-duration) var(--timing-function),
     opacity var(--transition-duration) var(--timing-function),
-    visibility var(--transition-duration) var(--timing-function);
+    visibility var(--transition-duration) var(--timing-function); */
 }
 .modal-btn {
   position: absolute;
