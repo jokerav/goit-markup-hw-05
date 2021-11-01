@@ -678,9 +678,8 @@ h5 {
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.2);
   top: 0;
-  transition:
-   /* transform var(--transition-duration) var(--timing-function), */ opacity
-      var(--transition-duration) var(--timing-function),
+  transition: transform var(--transition-duration) var(--timing-function),
+    opacity var(--transition-duration) var(--timing-function),
     visibility var(--transition-duration) var(--timing-function);
 }
 .modal {
