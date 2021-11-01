@@ -643,7 +643,9 @@ h5 {
   letter-spacing: 0.03em;
 }
 .exemple-overlay-box:hover .exemple-overlay,
-.exemple-overlay-box:focus .exemple-overlay {
+.exemple-overlay-box:focus .exemple-overlay,
+.exemple-link:hover .exemple-overlay,
+.exemple-link:focus .exemple-overlay {
   transform: translateY(0);
 }
 .exemple-link:hover,
